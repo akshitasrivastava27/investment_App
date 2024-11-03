@@ -10,6 +10,8 @@ from django.template.loader import get_template
 from django.template import Context
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth import authenticate, login as auth_login
+
 
 def index(request):
   return render(request, 'user/html/index.html', {'title': 'index'})
@@ -31,10 +33,10 @@ def login(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            auth_login(request, user)  # Use auth_login to avoid conflict
             messages.success(request, f'Welcome {username}!')
-            return redirect('index')
+            return redirect('../html/home.html')  # Redirect to your home page
         else:
-            messages.info(request, f'Account does not exist. Please sign up.')
+            messages.info(request, 'Account does not exist. Please sign up.')
     form = AuthenticationForm()
     return render(request, 'user/html/login.html', {'form': form, 'title': 'Log in'})
