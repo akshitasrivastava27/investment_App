@@ -91,8 +91,8 @@ Week 3 was a productive period focused on extensive debugging and adding new fea
 * Start designing database models for assets and user profiles and run successful migrations.
 * Develop and test CRUD operations for managing assets.
 
-###Investment Simulation Tool:
+### Investment Simulation Tool:
 * Begin working on the What-If simulation tool, focusing on data visualization for investment performance.
 
-###Further Enhancements:
+### Further Enhancements:
 * Optimize the admin panel for better user management and consider adding more features for admin control if necessary.
