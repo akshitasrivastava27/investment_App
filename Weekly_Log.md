@@ -86,13 +86,10 @@ Week 3 was a productive period focused on extensive debugging and adding new fea
 
 ### Page Styling:
 * Work on adding CSS to style the register, login, and other user interface pages to improve the visual design.
-
 ### Database Functionality:
 * Start designing database models for assets and user profiles and run successful migrations.
 * Develop and test CRUD operations for managing assets.
-
 ### Investment Simulation Tool:
 * Begin working on the What-If simulation tool, focusing on data visualization for investment performance.
-
 ### Further Enhancements:
 * Optimize the admin panel for better user management and consider adding more features for admin control if necessary.
