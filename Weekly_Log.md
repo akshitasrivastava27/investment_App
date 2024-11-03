@@ -74,7 +74,7 @@ Week 3 was a productive period focused on extensive debugging and adding new fea
 * Made the register and login pages functional. Although basic styling has not been added yet, the pages are working as intended.
 * Added a logout button for user sessions to enhance navigation.
 * Created an admin account with comprehensive management features:
-        * Admins can delete user accounts and manage user information, including updating passwords and login details upon user request.
+* Admins can delete user accounts and manage user information, including updating passwords and login details upon user request.
 * Resolved all previous admin-related issues, ensuring the project runs smoothly on the local host.
 
 
