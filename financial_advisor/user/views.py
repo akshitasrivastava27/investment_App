@@ -33,10 +33,13 @@ def login(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            auth_login(request, user)  # Use auth_login to avoid conflict
-            messages.success(request, f'Welcome {username}!')
-            return redirect('../html/home.html')  # Redirect to your home page
+            auth_login(request, user)  # This securely logs in the user
+            messages.success(request, f'Welcome back {username}!')
+            return redirect('home')  # Redirect to the named URL 'home'
         else:
-            messages.info(request, 'Account does not exist. Please sign up.')
+            messages.info(request, 'Account does not exist or credentials are invalid. Please try again.')
     form = AuthenticationForm()
     return render(request, 'user/html/login.html', {'form': form, 'title': 'Log in'})
+
+def home(request):
+    return render(request, 'user/html/home.html')

@@ -134,7 +134,7 @@ EMAIL_HOST_USER = 'akshitasrivastava2704@gmail.com'
 EMAIL_HOST_PASSWORD = 'r@mr@jy@'
 
 LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Default primary key field type
