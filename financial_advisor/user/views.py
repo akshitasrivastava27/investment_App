@@ -11,6 +11,9 @@ from django.template import Context
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth import authenticate, login as auth_login
+from datetime import datetime, timedelta
+from django.http import JsonResponse
+import pandas as pd
 
 
 def index(request):
@@ -43,3 +46,31 @@ def login(request):
 
 def home(request):
     return render(request, 'user/html/home.html')
+
+def filter_dataset(request):
+    # Get the selected timeframe from the GET request
+    timeframe = request.GET.get("timeframe", "1-year")
+
+    # Load the dataset (replace this with your actual dataset loading logic)
+    dataset = pd.read_csv("data/nasdaq_data.csv")
+
+    # Convert the date column to datetime
+    dataset["Date"] = pd.to_datetime(dataset["Date"])
+
+    # Filter dataset based on the timeframe
+    today = datetime.today()
+    if timeframe == "6-months":
+        start_date = today - timedelta(days=6 * 30)  # Approx. 6 months
+    elif timeframe == "1-year":
+        start_date = today - timedelta(days=365)
+    elif timeframe == "2-years":
+        start_date = today - timedelta(days=2 * 365)
+    elif timeframe == "5-years":
+        start_date = today - timedelta(days=5 * 365)
+    else:
+        start_date = dataset["Date"].min()  # Default to all data
+
+    filtered_dataset = dataset[dataset["Date"] >= start_date]
+
+    # Convert the filtered dataset to JSON and return it
+    return JsonResponse(filtered_dataset.to_dict(orient="records"), safe=False)

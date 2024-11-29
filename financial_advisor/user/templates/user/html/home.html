@@ -1,22 +1,28 @@
 {% extends "user/html/index.html" %}
 {% load crispy_forms_tags %}
 {% block start %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-          <link rel="stylesheet" href="home.css" />
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
-        </style>
-    </head>
-    <body>
-        <div class="welcome">
-            Hello, welcome to the Investment Advisor App. We are happy to help you at all times, no matter what the situation is!
-        </div>
-    </body>
-</html>
+<div class="welcome">
+    Hello, welcome to the Investment Advisor App. We are happy to help you at all times, no matter what the situation is!
+</div>
+
+<div class="dropdown" style="margin: 20px;">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+    Select Timeframe
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#" class="timeframe-option" data-timeframe="6-months">Last 6 Months</a></li>
+    <li><a href="#" class="timeframe-option" data-timeframe="1-year">Last 1 Year</a></li>
+    <li><a href="#" class="timeframe-option" data-timeframe="2-years">Last 2 Years</a></li>
+    <li><a href="#" class="timeframe-option" data-timeframe="5-years">Last 5 Years</a></li>
+  </ul>
+</div>
+<div id="dataset-display"></div>
+<div style="margin: 20px;">
+  <canvas id="datasetChart" width="400" height="200"></canvas>
+</div>
+
 
 {% endblock %}

@@ -27,4 +27,5 @@ urlpatterns = [
     path('login/', user_view.login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', user_view.register, name='register'),
+    path('filter-dataset/', user_view.filter_dataset, name='filter_dataset'),
 ]

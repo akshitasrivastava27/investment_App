@@ -1,8 +1,8 @@
-body{
+body {
     background: #f5f8fa;
     color: black;
     font-family: 'Roboto', sans-serif;
-    margin-top: 4rem;
+    margin: 0;
+    padding-top: 4rem; /* Matches the height of the navbar */
     line-height: 2.428571;
 }
-
