@@ -17,15 +17,19 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from user import views as user_view
+from user import views
 from django.contrib.auth import views as auth_views
+#
+# from financial_advisor.user import views
 
 urlpatterns = [
     path('', include('user.urls')),
     path('admin/', admin.site.urls),
-    path('home/', user_view.home, name='home'),
-    path('login/', user_view.login, name='login'),
+    path('', views.index, name='index'),
+    path('home/', views.home, name='home'),
+    path('login/', views.login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('register/', user_view.register, name='register'),
-    path('filter-dataset/', user_view.filter_dataset, name='filter_dataset'),
+    path('register/', views.register, name='register'),
+    path('filter_dataset', views.filter_dataset, name='filter_dataset'),
 ]
+

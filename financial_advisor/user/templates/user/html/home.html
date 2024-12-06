@@ -1,12 +1,14 @@
 {% extends "user/html/index.html" %}
-{% load crispy_forms_tags %}
+{% load static %}
 {% block start %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="welcome">
     Hello, welcome to the Investment Advisor App. We are happy to help you at all times, no matter what the situation is!
 </div>
 
+<div class="flex-container">
+
+</div>
 <div class="dropdown" style="margin: 20px;">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
     Select Timeframe
@@ -19,10 +21,13 @@
     <li><a href="#" class="timeframe-option" data-timeframe="5-years">Last 5 Years</a></li>
   </ul>
 </div>
+
 <div id="dataset-display"></div>
 <div style="margin: 20px;">
   <canvas id="datasetChart" width="400" height="200"></canvas>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="{% static 'jscript/chart-handler.js' %}"></script>
 
 {% endblock %}
