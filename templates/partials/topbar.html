@@ -207,10 +207,12 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                    <a href="{% url 'logout' %}" class="dropdown-item notify-item">
-                    <i class="fe-log-out"></i>
-                    <span>Logout</span>
-                </a>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                  
+                    <button class="dropdown-item notify-item" type="submit">  <i class="fe-log-out"></i> Logout</button>
+                </form>
+                 
 
             </div>
         </li>

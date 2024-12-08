@@ -21,12 +21,7 @@ from custom.views import (
 urlpatterns = [
 
    #Auth Pages
-#    path("login",  view=login_view, name="login"),
-#    path("register",  view=register_view, name="register"),
-   path("recoverpw",  view=recoverpw_view, name="recoverpw"),
-   path("lock-screen",  view=lock_screen_view, name="lock-screen"),
-   path("confirm-mail",  view=confirm_mail_view, name="confirm-mail"),
-#    path("logout",  view=logout_view, name="logout"),
+   
   
    #Extra Pages
    path("starter",  view=starter_view, name="starter"),

@@ -27,15 +27,15 @@ class LeftSidebar {
         //     if (self.window.width() >= 993) {
         //         if (sidebarSize === 'condensed') {
         //             self.changeSize(defaultSidebarSize);
-        //             window.dispatchEvent(new Event('adminto.setFluid'));
+        //             window.dispatchEvent(new Event('advisor_app.setFluid'));
         //         } else {
         //             self.changeSize('condensed');
-        //             window.dispatchEvent(new Event('adminto.setBoxed'));
+        //             window.dispatchEvent(new Event('advisor_app.setBoxed'));
         //         }
         //     } else {
         //         self.changeSize(defaultSidebarSize);
         //         self.body.toggleClass('sidebar-enable');
-        //         window.dispatchEvent(new Event('adminto.setFluid'));
+        //         window.dispatchEvent(new Event('advisor_app.setFluid'));
         //     }
         // });
 
